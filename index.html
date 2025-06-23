@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Free Thinking School</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 20px;
+      color: brown;
+    }
+
+    header .logo img {
+      height: 100px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+
+      padding: 10px 8px;
+      border-radius: 70%;
+      background-color: lightcoral;
+
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.8em;
+      display: inline-block;
+      border-radius: 50%;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li:hover a {
+
+      color: white;
+    }
+
+    .hero {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8JGijkFvYdQdvaywgogMObCZJYPtpxy8RcQ&s');
+      background-size: cover;
+      background-position: center;
+      color: teal;
+      text-align: center;
+      padding: 100px 20px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .colorful-text {
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      letter-spacing: -2px;
+    }
+
+    .colorful-text span {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .colorful-text .blue {
+      color: #2196F3;
+    }
+
+    .colorful-text .green {
+      color: #4CAF50;
+    }
+
+    .colorful-text .pink {
+      color: #E91E63;
+    }
+
+    marquee {
+      font-size: 2em;
+      color: darkorange;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .sections {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px 0;
+      background-image: url('https://www.shutterstock.com/image-vector/colorful-cute-doodles-abstract-shapes-form-2006184263');
+      background-size: cover;
+      background-position: center;
+      padding: 50px 0;
+    }
+
+    .sections .section {
+      text-align: center;
+      width: 30%;
+      position: relative;
+    }
+
+    .sections .section img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 50%;
+
+      z-index: 1;
+    }
+
+    .philosophy {
+      text-align: center;
+      padding: 70px;
+      background-color: lightgray;
+      border: 5px solid plum;
+      border-radius: 30%;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .philosophy p {
+      font-size: 1.2em;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial-section {
+      background-color: lavender;
+      text-align: center;
+      padding: 50px 20px;
+      margin: 50px 0;
+    }
+
+    .testimonial-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-title span {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .testimonial-title .blue {
+      color: #2196F3;
+    }
+
+    .testimonial-title .green {
+      color: #4CAF50;
+    }
+
+    .testimonial-title .orange {
+      color: #FF9800;
+    }
+
+    .testimonial-title .pink {
+      color: #E91E63;
+    }
+
+    .testimonial-quote {
+      font-size: 1.2em;
+      font-style: italic;
+      color: #555;
+      margin: 0;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .testimonial-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testimonial-container button {
+      background-color: transparent;
+      border: none;
+      font-size: 1em;
+      color: #2196F3;
+      cursor: pointer;
+    }
+
+    .testimonial-container button:hover {
+      color: #E91E63;
+    }
+
+    .testimonial-arrow {
+      font-size: 2em;
+      color: #2196F3;
+      cursor: pointer;
+    }
+
+    .testimonial-arrow:hover {
+      color: #E91E63;
+    }
+
+    .testimonial-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      transition: transform 0.3s ease;
+
+    }
+
+    header .logo img {
+      max-height: 100px;
+      width: auto;
+      border-radius: 0;
+      border: none;
+
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+
+      transition: transform 0.3s ease;
+      z-index: 1;
+      gap: 40px;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    .image-container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .team-section {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(lightblue, lightcoral);
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 20px;
+
+    }
+
+    .team-section h2 {
+      width: 100%;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .team-member-box {
+      width: 45%;
+
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .team-member-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      background-color: #f7f7f7;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      animation: scaleUp 0.5s ease-out;
+      border-color: #E91E63;
+    }
+
+    .team-member img:hover {
+      transform: scale(1.1);
+    }
+
+    .team-member h3 {
+      margin: 10px 0 5px 0;
+    }
+
+    .team-member p {
+      color: #555;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .team-member-box {
+        width: 100%;
+
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0.9);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .initiatives {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #f5f5f5;
+    }
+
+    .initiatives h2 {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .our {
+      color: green;
+    }
+
+    .initiatives-text {
+      color: orangered;
+    }
+
+    .initiatives-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .initiative {
+      text-align: center;
+      max-width: 220px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .initiative img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: none;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .initiative img:hover {
+      transform: scale(1.1);
+    }
+
+    .initiative p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .initiative p span {
+      font-size: 14px;
+      font-weight: normal;
+      display: block;
+      color: gray;
+    }
+
+    .initiative.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: var(--delay);
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://www.thefreethinkingschool.com/images/logo.png" alt="The Free Thinking School Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      </ul>
+
+
+    </nav>
+  </header>
+  <div style="text-align: center;">
+    <a href="https://www.facebook.com/TheFreethinkingSchool" target="_blank" style="margin: 0 10px;">
+      <i class="fab fa-facebook fa-2x" style="color: #3b5998;"></i>
+    </a>
+    <a href="https://www.instagram.com/TheFreethinkingSchool" target="_blank" style="margin: 0 10px;">
+      <i class="fab fa-instagram fa-2x" style="color: #E1306C;"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/freethinking-foundation/" target="_blank" style="margin: 0 10px;">
+      <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
+    </a>
+    <a href="https://www.youtube.com/@freethinkingfoundation1213" target="_blank" style="margin: 0 10px;">
+      <i class="fab fa-youtube fa-2x" style="color: #FF0000;"></i>
+    </a>
+    <a href="" target="_blank" style="margin: 0 10px;">
+      <i class="fab fa-wordpress fa-2x" style="color: #DB4437;"></i>
+    </a>
+  </div>
+
+
+  <section class="hero">
+    <h1 style="font-size: 50px;">Welcome to The Freethinking School</h1>
+    <div class="colorful-text">
+      <span class="blue">it’s</span>
+      <span class="green">time</span>
+      <span class="blue">to</span>
+      <span class="green">free</span>
+      <span class="blue">think</span>
+      <span class="pink">education!</span>
+    </div>
+    <marquee>Admissions Open for 2025-2026</marquee>
+  </section>
+
+  <section class="sections">
+    <div class="section">
+      <img src="https://www.pyarababy.com/cdn/shop/files/DSC00587.webp?v=1717486227" alt="Interactive Learning">
+      <h2>Interactive Learning</h2>
+      <p>Engaging and dynamic learning environments.</p>
+    </div>
+    <div class="section">
+      <img src="https://th.bing.com/th/id/OIP.LqX6DOrla1-NqWWm0dlsaQHaE5?rs=1&pid=ImgDetMain" alt="Holistic Activities">
+      <h2>Holistic Activities</h2>
+      <p>Fostering creativity and growth through diverse programs.</p>
+    </div>
+    <div class="section">
+      <img
+        src="http://topponcinocompany.com/cdn/shop/articles/group-of-kindergarten-kids-learning-gardening-outd-2023-11-27-05-23-51-utc.jpg?v=1709259165"
+        alt="Outdoor Exploration">
+      <h2>Outdoor Exploration</h2>
+      <p>Encouraging curiosity and physical development.</p>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <p>At The Freethinking School, our focus is on Montessori-based,<br>
+      personalized, experiential learning that transcends the classroom, <br>
+      to make every child a freethinker for life.</p>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-title">
+      <span class="pink">What</span>
+      <span class="pink">Parents</span>
+      <span class="pink">Say</span>
+    </div>
+    <div class="testimonial-content">
+      <span class="testimonial-arrow">&#8592;</span>
+      <div class="testimonial-quote" id="testimonial">
+        "The Freethinking School has been a wonderful home for our child for the last 2 plus years. His interests are
+        encouraged, his skills are developed, and his love for learning has blossomed."
+      </div>
+      <span class="testimonial-arrow">&#8594;</span>
+    </div>
+  </section>
+  <script>
+    let currentReviewIndex = 0;
+    const reviews = [
+      "The Freethinking School has been a wonderful home for our child for the last 2 plus years. His interests are encouraged, his skills are developed, and his love for learning has blossomed.",
+      "Thank you Freethinking School. We have seen tremendous progress in our son. All his perceived weaknesses have now turned into his strengths. Very happy with his progress, looking forward to more.",
+      "“Thank you so much Team Freethinking. My child has not been so excited and open to learning as he is now. All the very best!”",
+      "“Excellent! It’s a dream for every parent to see what his children do in the school. Heartfelt thanks for this opportunity”."
+    ];
+
+    function changeReview(direction) {
+      if (direction === 'next') {
+        currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+      } else if (direction === 'prev') {
+        currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+      }
+      document.getElementById('testimonial').textContent = reviews[currentReviewIndex];
+    }
+
+    document.querySelectorAll('.testimonial-arrow').forEach(arrow => {
+      arrow.addEventListener('click', function () {
+        if (this.textContent === '→') {
+          changeReview('next');
+        } else if (this.textContent === '←') {
+          changeReview('prev');
+        }
+      });
+    });
+  </script>
+  <h2 style="text-align: center; font-size: 35px;">
+    <span style="color: #E91E63;">In</span>
+    <span style="color:#E91E63;">The</span>
+    <span style="color: #E91E63;">Media</span>
+  </h2>
+
+  <img src="https://www.thefreethinkingschool.com/images/press/img1sq.jpg" alt="img1" style="margin: 10px;">
+  <img src="https://www.thefreethinkingschool.com/images/press/img2sq.jpg" alt="img2" style="margin: 10px;">
+  <img src="https://www.thefreethinkingschool.com/images/press/img3sq.jpg" alt="img3" style="margin: 10px;">
+  <img src="https://www.thefreethinkingschool.com/images/press/img4sq.jpg" alt="img4" style="margin: 10px;">
+  <img src="https://www.thefreethinkingschool.com/images/press/img5sq.jpg" alt="img5" style="margin: 10px;">
+  <img src="https://www.thefreethinkingschool.com/images/press/img7sq.jpg" alt="img6" style="margin: 10px;">
+
+  <div class="team-section">
+    <h2 style="color: #E91E63;">Our Team</h2>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/anant.jpg" alt="Ananth Ravi">
+        <h3>Ananth Ravi</h3>
+        <p>Experienced professional with a demonstrated history of working in the oil & energy industry. Strong real
+          estate professional skilled in Operations Management, Venture Capital, Team Building, Risk Assessment and
+          Strategic Sourcing.</p>
+      </div>
+    </div>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/pattabhi.jpg" alt="Pattabhi Rama Rao">
+        <h3>Pattabhi Rama Rao SBP</h3>
+        <p>PRR built the CookieMan chain almost from scratch in the Indian subcontinent and is passionate about the food
+          business. As a partner in Gourmet Popcornica, he is in charge of driving business strategy. </p>
+      </div>
+    </div>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/nitya.jpg" alt="Nitya Poornima">
+        <h3>Dr. Nithya Poornima</h3>
+        <p>A trained Clinical Psychologist, having experience working with children and adolescents. She is currently
+          employed as an Assistant professor with the Department of Clinical Psychology, NIMHANS, Bengaluru, India.
+          Parenting, fostering emotional well-being and resilience, early childhood enrichment, play and creative
+          expressive methods of intervention, yoga and mindfulness are some of her current areas of interest. Training
+          of mental health professionals and self-care among mental health professionals are other areas of interest.
+        </p>
+      </div>
+    </div>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/jude.jpg" alt="Jude">
+        <h3>Mr. Jude Felix Sebastian</h3>
+        <p>An Olympian and Former Captain of the Indian Hockey Team, with 13+ years of International Hockey playing
+          experience and 21+ years of Hockey coaching experience. Jude is also the President of Jude Felix Hockey
+          Academy, a non-profit organization that’s promotes Hockey among under-privileged children.</p>
+      </div>
+    </div>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/sandy.jpg" alt="Sandy">
+        <h3>Sandy Philip</h3>
+        <p style="color: black;font-weight: 900;">Co-founder and Directress</p>
+        <p>Sandy loves working with children and believes that they are our most precious resources. Having devoted
+          close to a decade in the field of education, she believes that experiential Montessori learning is the most
+          meaningful methodology that has far-reaching benefits to the learner, way beyond the confines of the pages in
+          a textbook.
+
+          She received her teachers' training from Christ University and is a certified Montessori Directress. She is
+          also the Founder of The Montessori Network, a community initiative to promote Montessori to the masses. She
+          has a flair for all things literary, is highly creative and devoted to creating learning spaces that are
+          engaging and everlasting</p>
+      </div>
+    </div>
+
+    <div class="team-member-box">
+      <div class="team-member">
+        <img src="https://www.thefreethinkingschool.com/images/sunoj.jpg" alt="Sunoj">
+        <h3>Sunoj Philip</h3>
+        <p style="color: black;font-weight:900;">Founder & CEO</p>
+        <p>Sunoj is the brain behind The Freethinking School. With over 20 years of marketing, event management and
+          brand communications experience, Sunoj is no stranger to ideas! He is the founder of a creative social impact
+          agency called Agency for Good which is focused on doing good work that enables the greater good.
+
+          He is also the founder of an online platform called Zillion Acts for Good that helps communities do what they
+          love while doing good. Innovative, committed, eager to learn and driven by passion, he envisioned a space that
+          nurtures the imaginative mind.</p>
+      </div>
+    </div>
+
+  </div>
+  <section class="initiatives">
+    <h2 style="color: #E91E63;">Our Initiatives</h2>
+    <div class="initiatives-container">
+      <div class="initiative animate" style="--delay: 0.2s;">
+        <img src="https://www.thefreethinkingschool.com/images/free_smile.png" alt="Free Smiles">
+        <p>Free Smiles is a freethinking family initiative to share some happiness with others in our
+          community.<br><span>share happiness!</span></p>
+      </div>
+      <div class="initiative animate" style="--delay: 0.4s;">
+        <img src="https://www.thefreethinkingschool.com/images/mont_net.png" alt="Montessori for Masses">
+        <p>Montessori for Masses is a forum for Montessories and Montessories to come together to share their ideas and
+          experiences.<br><span>FOR MASSES</span></p>
+      </div>
+      <div class="initiative animate" style="--delay: 0.6s;">
+        <img src="https://www.thefreethinkingschool.com/images/alumni_meet.png" alt="The Freethinking Family">
+        <p>the freethinking family is a forum for our past and present families to come together to share their
+          experiences.<br><span>alumni meet</span></p>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const initiatives = document.querySelectorAll(".initiative");
+
+      function revealInitiatives() {
+        initiatives.forEach((initiative) => {
+          const rect = initiative.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            initiative.classList.add("show");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealInitiatives);
+      revealInitiatives();
+    });
+  </script>
+
+  <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+    <p>© www.thefreethinkingschool.com 2017</p>
+
+    <div>
+      <p><strong>📍</strong><b>Koramangala,Bangalore:</b>371, 8th Cross Rd, S.T. Bed, Cauvery Colony, Koramangala,
+        Bengaluru 560 095</p>
+      <p><strong>📍</strong><b>Kudlu,Bangalore:</b>No. 216, Silver County Road, Opp. RBD Still Waters, Kudlu, Bengaluru
+        560 068</p>
+      <p><strong>📍</strong><b>Kochi,Kerala:</b>Vikram Sarabhai Science Park, 25/1, Thengode, PO Kakkanad, Kochi 682 030
+      </p>
+      <p><strong>📞</strong> +91 73533 53500</p>
+      <p><strong>📧</strong>admin@thefreethinkingschool.com</p>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.591781481979!2d77.62898757793366!3d12.933938154832948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14591a975ae1%3A0x17af991ea5b3144!2sThe%20Freethinking%20School!5e0!3m2!1sen!2sin!4v1738305653021!5m2!1sen!2sin"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.297190080033!2d77.67011667483983!3d12.888601887419192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13491b974caf%3A0xb95a559dda1f619a!2sThe%20Freethinking%20School!5e0!3m2!1sen!2sin!4v1738305614747!5m2!1sen!2sin"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.9076619549105!2d76.35864487479391!3d10.024478390082178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c7f2003587d%3A0xac4a1367f68a6ece!2sThe%20Freethinking%20School!5e0!3m2!1sen!2sin!4v1738305488708!5m2!1sen!2sin"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
+</body>
+
+</html>

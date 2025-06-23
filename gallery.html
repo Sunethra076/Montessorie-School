@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: bisque;
+    }
+
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 40px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      
+      padding: 10px 8px;
+      border-radius: 70%;
+      background-color: lightcoral;
+      
+    }
+
+
+    .photo-gallery {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .photo-gallery h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .photo {
+      text-align: center;
+      width: 150px;
+    }
+
+    .photo img {
+      width: 165px;
+      height: 165px;
+      
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .photo img:hover {
+      transform: scale(2);
+    }
+
+    .photo p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+
+
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .video,
+    .video1,
+    .video2,
+    .video3,
+    .video4 {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      
+    }
+
+    .video iframe,
+    .video1 iframe,
+    .video2 iframe,
+    .video3 iframe,
+    .video4 iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+
+
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    
+
+    .title1 {
+      font-size: 35px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+   
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="https://www.thefreethinkingschool.com/images/logo.png" alt="School Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="photo-gallery">
+      <h1 style="color:#E91E63;">
+        Freethinking
+        Gallery
+      </h1>
+
+      <div class="photo-container">
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/lau_thumb.jpg" alt="TFS-Kudlu Launch">
+          <p>TFS-Kudlu Launch</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/asa_thumb.jpg" alt="Afterschool Activities">
+          <p>Afterschool Activities</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/ftu_thumb.jpg" alt="Field Trip">
+          <p>Field Trip</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/spo_thumb.jpg" alt="Sports Day">
+          <p>Sports Day</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/gallery/eur_thumb.jpg" alt="European Food Festival">
+          <p>European Food Festival</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/mom_thumb.jpg" alt="Mom's Night - Kochi">
+          <p>Mom's Night - Kochi</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/rea_thumb.jpg" alt="Reading Awareness Week">
+          <p>Reading Awareness Week</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/gra_thumb.jpg" alt="Grandmother's day">
+          <p>Grandmother's day</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/bac_thumb.jpg" alt="Back to School">
+          <p>Back to School</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/sep_thumb.jpg" alt="september - asia">
+          <p>september - asia</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/art_thumb.jpg" alt="august - europe">
+          <p>august - europe</p>
+        </div>
+        <div class="photo">
+          <img src="https://www.thefreethinkingschool.com/images/gallery/sound_thumb.jpg" alt="sound garden">
+          <p>sound garden</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/gallery/sck_thumb.jpg" alt="summerfest">
+          <p>summer fest</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/gallery/scb_thumb.jpg" alt="summercamp">
+          <p>summer camp</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/gallery/coo_thumb.jpg" alt="cookie">
+          <p>cookie day</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/gallery/ksp_thumb.jpg" alt="spday">
+          <p>kochi sports day</p>
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/kora2.jpg" alt="">
+          
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/kochi2.jpg" alt="">
+         
+        </div>
+        <div class="photo">
+          <img src="https://thefreethinkingschool.com/images/kud2.jpg" alt="">
+         
+        </div>
+
+      </div>
+    </section><br><br><br>
+
+
+
+    <section class="video-gallery">
+      <h3 style="color: #E91E63;text-align: center;font-size: 35px;">
+        Video
+        Gallery
+      </h3>
+
+      <div class="video-container">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/Ah_eMVwfFBw" title="Video 1" allowfullscreen></iframe>
+        </div>
+        <div class="video1">
+          <iframe src="https://www.youtube.com/embed/xIQusXuYTGs" title="Video 2" allowfullscreen></iframe>
+        </div>
+        <div class="video2">
+          <iframe src="https://player.vimeo.com/video/90194214" title="Video 3" allowfullscreen></iframe>
+        </div>
+        <div class="video3">
+          <iframe src="https://www.youtube.com/embed/iG9CE55wbtY" title="Video 4" allowfullscreen></iframe>
+        </div>
+        <div class="video4">
+          <iframe src="https://www.youtube.com/embed/GcgN0lEh5IA" title="Video 5" allowfullscreen></iframe>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main><br><br><br><br><br>
+  <hr style="border: 1px solid black; width: 90%; margin: 20px auto;">
+  <h1 style="text-align: center;">
+    <span style="color: teal;">After</span>
+    <span style="color: teal;">School</span>
+    <span style="color: teal;">Care</span>
+    <span style="color: teal;">Program</span>
+  </h1><br><br><br>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+
+    <img src="https://thefreethinkingschool.com/images/after1.jpg" alt="aftschool"
+      style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover;  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); margin-top: -20px;">
+
+
+    <div style="border-left: 2px solid #2980b9; height: 450px; margin: 0 20px;"></div>
+
+
+    <div style="max-width: 50%; font-size: 20px; line-height: 1.6;">
+      <p style="text-align:left;">
+        The highly trained and enthusiastic faculty at the school will put the children’s time to productive use with
+        fun-filled learning exercises such as reading, building blocks, puzzles, art, craft, and much more.
+        Children are encouraged to read books appropriate for their reading level from the library available at the
+        campus or bring books of their own choice. The program will also include snack and nap time for the young ones.
+        As an additional service, we also offer the children professional help in doing their homework.
+      </p>
+      <p style="color: purple;text-align: left;font-size: 25px;">Program Details:
+      <ul style="list-style-type: disc; margin-left: 20px; text-align: left;font-size: 20px;">
+        <li>Age group: 2 - 12 years</li>
+        <li>Monday to Friday</li>
+        <li>Timing: 12:30 PM to 6:00 PM</li>
+        <li>Monthly & Daily plans available</li>
+        <li>Activities include:
+          <ul style="list-style-type: circle; margin-left: 20px; text-align: left;">
+            <li>Art</li>
+            <li>Craft</li>
+            <li>Sports</li>
+            <li>Building toys and puzzles</li>
+            <li>Cooking</li>
+            <li>Music</li>
+            <li>Snacks</li>
+            <li>Nap time</li>
+            <li>Quiet reading time</li>
+            <li>Free play</li>
+          </ul>
+        </li>
+      </ul>
+      </p>
+    </div>
+  </div><br><br><br>
+
+  <h1 style="text-align: center;">
+    <span style="color: teal;">After</span>
+    <span style="color: teal;">School</span>
+    <span style="color: teal;">Club</span>
+    <span style="color: teal">Program</span>
+  </h1><br><br><br>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+
+    <img src="https://thefreethinkingschool.com/images/after2.jpg" alt="aftschool"
+      style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover;  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); margin-top: -20px;">
+
+
+    <div style="border-left: 2px solid #2980b9; height: 450px; margin: 0 20px;"></div>
+
+
+    <div style="max-width: 50%; font-size: 20px; line-height: 1.6;">
+      <p style="text-align:left;">
+        The After School Club at The Freethinking School will provide a program that exposes students to diverse,
+        creative and challenging activities that enhance physical, intellectual, emotional, moral and social
+        development. The program will offer a mix of structured and unstructured activities including team, small group
+        and individual, outdoor and indoor activities.
+      </p>
+      <p style="color: purple;text-align: left;font-size: 25px;">Activities:
+      <ul style="list-style-type: disc; margin-left: 20px; text-align: left;font-size: 20px;">
+
+        <ul style="list-style-type: circle; margin-left: 20px; text-align: left;">
+          <li>Music(western)</li>
+          <li>Dance(western)</li>
+          <li>Theatre</li>
+          <li>Drawing, Sketching & Painting</li>
+          <li>Baking(children/Adults)</li>
+          <li>Vocal training and more</li>
+        </ul>
+        </li>
+      </ul>
+      </p>
+    </div>
+  </div><br><br><br>
+
+  <h1 style="text-align: center;">
+    <span style="color: teal;">Summer</span>
+    <span style="color: teal;">Fest</span>
+    <span style="color: teal">Activities</span>
+  </h1><br><br><br>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+
+    <img src="https://thefreethinkingschool.com/images/summer.jpg" alt="aftschool"
+      style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover;  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); margin-top: -20px;">
+
+
+    <div style="border-left: 2px solid #2980b9; height: 450px; margin: 0 20px;"></div>
+
+
+    <ul style="list-style-type: disc; margin-left: 20px; text-align: left;font-size: 20px;">
+
+      <ul style="list-style-type: circle; margin-left: 20px; text-align: left;">
+        <li>Dates: 1st to 30th April,2020</li>
+        <li>Age group: preschoolers(2.5 - 6 years)</li>
+        <li>Across all TFS locations</li>
+        <li>Themed weekdays & getaway weekends</li>
+        <li>Timing 9:30am to 12:30pm</li>
+        <li>Monthly & Weekly plan available</li>
+        <li>For Individual Activities for 6+ years,please contact us</li>
+      </ul>
+      </li>
+    </ul>
+
+  </div>
+  </div><br><br><br>
+
+
+
+
+  <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+    <p>© www.thefreethinkingschool.com 2017</p>
+
+    
+     
+  </footer>
+
+
+
+
+</body>
+
+</html>

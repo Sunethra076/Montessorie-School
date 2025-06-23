@@ -1,0 +1,832 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admission Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      width: 350px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: beige;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff6347;
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #ff6347
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4500;
+    }
+
+    .message {
+      color: green;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    .section-background {
+      background-color: lightgray;
+      padding: 20px;
+      border-radius: 100px;
+      margin: 20px 0;
+    }
+
+    .section-background h1 {
+      color: brown;
+      font-size: 40px;
+    }
+
+    .section-background p {
+      color: #555;
+      font-size: 20px;
+    }
+
+    .second-section-background {
+      background-color: lightblue;
+      padding: 20px;
+      border-radius: 100px;
+      margin: 20px 0;
+    }
+
+    .second-section-background p {
+      color: #ff6347;
+      font-size: 20px;
+    }
+
+    .circle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .circle {
+      background-color: lightgreen;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 90px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .circle-container1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .circle1 {
+      background-color: indigo;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 90px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .circle-container2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .circle2 {
+      background-color: brown;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 90px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 40px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      padding: 10px 8px;
+      border-radius: 70%;
+      background-color: lightcoral;
+    }
+
+    .testimonial-section {
+      background-color: lavender;
+      text-align: center;
+      padding: 50px 20px;
+      margin: 50px 0;
+      border-radius: 90px;
+    }
+
+    .testimonial-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-title span {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .testimonial-title .blue {
+      color: #2196F3;
+    }
+
+    .testimonial-title .green {
+      color: #4CAF50;
+    }
+
+    .testimonial-title .orange {
+      color: #FF9800;
+    }
+
+    .testimonial-title .pink {
+      color: #E91E63;
+    }
+
+    .testimonial-quote {
+      font-size: 1.2em;
+      font-style: italic;
+      color: #555;
+      margin: 0;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .testimonial-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px
+    }
+
+    .testimonial-container button {
+      background-color: transparent;
+      border: none;
+      font-size: 1em;
+      color: #2196F3;
+      cursor: pointer;
+    }
+
+    .testimonial-container button:hover {
+      color: #E91E63;
+    }
+
+    .testimonial-arrow {
+      font-size: 2em;
+      color: #2196F3;
+      cursor: pointer;
+    }
+
+    .testimonial-arrow:hover {
+      color: #E91E63;
+    }
+
+    .testimonial-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .initiatives {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #f5f5f5;
+    }
+
+    .initiatives h2 {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .our {
+      color: green;
+    }
+
+    .initiatives-text {
+      color: orangered;
+    }
+
+    .initiatives-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .initiative {
+      text-align: center;
+      max-width: 220px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .initiative img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: none;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .initiative img:hover {
+      transform: scale(1.1);
+    }
+
+    .initiative p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .initiative p span {
+      font-size: 14px;
+      font-weight: normal;
+      display: block;
+      color: gray;
+    }
+
+    .initiative.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: var(--delay);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .section-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: nowrap;
+      margin: 20px;
+    }
+
+    .section {
+      flex: 1;
+      padding: 20px;
+      background-color: lightgreen;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .section1 {
+      flex: 1;
+      padding: 20px;
+      background-color: lavender;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .section2 {
+      flex: 1;
+      padding: 20px;
+      background-color: lightsalmon;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .circle-container {
+      margin-bottom: 20px;
+    }
+
+    .circle {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .circle1 {
+      background-color: purple;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .circle2 {
+      background-color: brown;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .advantages {
+      list-style-type: none;
+      padding: 0;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .advantages li {
+      margin: 5px 0;
+    }
+
+    .faq-container {
+      width: 60%;
+      margin: 30px auto;
+      max-width: 500px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      background-color: lightcoral;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background-color: li;
+    }
+
+    .faq-answer {
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin: 5px 0;
+      display: none;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .faq-question span {
+      float: right;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+  </style>
+  <script type="module" src="form.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="https://www.thefreethinkingschool.com/images/logo.png" alt="School Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="admissions.html" class="active">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form  action="admission.php" method="POST">
+
+    <h2>Admission Form</h2>
+
+    <label for="childName">Child Name:</label>
+    <input type="text" id="childName" name="childName" required>
+
+    <label for="parentName">Parent Name:</label>
+    <input type="text" id="parentName" name="parentName" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("admissionForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        if (validateForm()) {
+            alert("Form submitted successfully!");
+            // Here, you can add an AJAX request if needed
+        }
+    });
+
+    function validateForm() {
+        let childName = document.getElementById("childName").value.trim();
+        let parentName = document.getElementById("parentName").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let age = document.getElementById("age").value;
+        let address = document.getElementById("address").value.trim();
+
+        if (!childName || !parentName || !email || !phone || !age || !address) {
+            alert("All fields are required.");
+            return false;
+        }
+
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!email.match(emailPattern)) {
+            alert("Please enter a valid email.");
+            return false;
+        }
+
+        let phonePattern = /^[0-9]{10}$/;
+        if (!phone.match(phonePattern)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return false;
+        }
+
+        if (age < 3) {
+            alert("Age must be at least 18.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+   
+  <div class="section-background">
+    <h1 style="text-align: center;">Why Montessori is Better Than a Traditional Daycare?</h1>
+    <p style="text-align: center;">What’s more important for children - learning and growing at their own pace, or
+      living on the basis of adult-led
+      schedules? What they need most is a calm, orderly environment where trained professionals help them develop
+      as individuals, in the most enjoyable way. Here are a few ways in which
+      The Freethinking School can transform the way you approach childcare, so anxious parents can rest assured.</p>
+  </div>
+  <div class="second-section-background">
+    <h2 style="text-align: center;">The Maternity Benefit (Amendment) Act, 2017</h2>
+    <p style="text-align: center;">The Maternity Benefit (Amendment) Act, 2017 received the approval of the President of
+      India in March 2017. The related Maternity Benefit Bill was passed by both houses of the parliament in the same
+      month.</p>
+    <p style="text-align: center;">As per the Act, paid maternity leave has been revised to 26 weeks from 12 weeks
+      earlier. Additionally, the new law mandates that companies with more than 50 employees must provide a Daycare or
+      Crèche facility within an acceptable distance.</p>
+  </div><br><br><br>
+  <div class="section-wrapper">
+    <div class="section">
+      <div class="circle-container">
+        <div class="circle">Onsite Montessori Facility</div>
+      </div>
+      <p>An exclusive facility set up on or near premises of the corporate. Fit out and setup costs borne by corporate.
+      </p>
+      <ul class="advantages">
+        <p style="text-align: center;color: green;">Advantages</p>
+        <li>Easy access for employees,</li>
+        <li>Scalable operational costs,</li>
+        <li>Complete corporate control on design, access & quality.</li>
+      </ul>
+    </div>
+    <div class="section1">
+      <div class="circle-container">
+        <div class="circle1">Near-site Montessori Facility</div>
+      </div>
+      <p>TFS sets up a near-site facility for the corporate with an agreed-upon number of seats blocked for the partner.
+      </p>
+      <ul class="advantages">
+        <p style="text-align: center;color: purple;">Advantages</p>
+        <li>Upfront costs borne by TFS, no upfront CAPEX for corporate,</li>
+        <li>Easy access for employees and scalable operations.</li>
+      </ul>
+    </div>
+    <div class="section2">
+      <div class="circle-container">
+        <div class="circle2">Underwritten Subsidized Childcare</div>
+      </div>
+      <p>Corporate partner blocks required number of seats across TFS locations by paying the admission fee and monthly
+        tuition fee.</p>
+      <ul class="advantages">
+        <p style="text-align: center;color: brown;">Advantages</p>
+        <li>Can be implemented with immediate effect,</li>
+        <li>No CAPEX obligations on Corporate,</li>
+        <li>Testing ground for setting up an onsite center,</li>
+      </ul>
+    </div>
+  </div>
+  </div><br><br>
+  <h1 style="color: brown; font-weight: bold;text-align: center;">Corporate Enquiry</h1>
+  <p style="text-align: center; border-radius: 90px; border: 5px solid pink; padding: 20px;">
+    <span style="color: teal;font-size: 20px;">Get in touch with us</span>
+    <span style="color: teal;font-size: 20px;">to know more about our</span>
+    <span style="color: teal;font-size: 20px;">corporate partnership</span>
+  </p>
+  <section class="testimonial-section">
+    <div class="testimonial-title">
+      <span class="blue">What</span>
+      <span class="green">Parents</span>
+      <span class="pink">Say</span>
+    </div>
+    <div class="testimonial-content">
+      <span class="testimonial-arrow"> ← </span>
+      <div class="testimonial-quote" id="testimonial">
+        "The Freethinking School has been a wonderful home for our child for the last 2 plus years. His interests are
+        encouraged, his skills are developed, and his love for learning has blossomed."
+      </div>
+      <span class="testimonial-arrow"> → </span>
+    </div>
+  </section>
+  <script>
+    let currentReviewIndex = 0;
+    const reviews = [
+      "The Freethinking School has been a wonderful home for our child for the last 2 plus years. His interests are encouraged, his skills are developed, and his love for learning has blossomed.",
+      "Thank you Freethinking School. We have seen tremendous progress in our son. All his perceived weaknesses have now turned into his strengths. Very happy with his progress, looking forward to more.",
+      "“Dad’s night gives us a chance to see the kids in their environment. My son is always excited during these events, which clearly shows how much he loves school! Thanks!”",
+      "“Awesome school. They make kids independent, gives lot of freedom to nurture creativity, and kids love school time in the free thinking school”."
+    ];
+
+    function changeReview(direction) {
+      if (direction === 'next') {
+        currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+      } else if (direction === 'prev') {
+        currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+      }
+      document.getElementById('testimonial').textContent = reviews[currentReviewIndex];
+    }
+
+    document.querySelectorAll('.testimonial-arrow').forEach(arrow => {
+      arrow.addEventListener('click', function() {
+        if (this.textContent === '→') {
+          changeReview('next');
+        } else if (this.textContent === '←') {
+          changeReview('prev');
+        }
+      });
+    });
+  </script>
+  <h1 style="color: brown; font-size: 50px; text-align: center;">Connect</h1>
+  <div style="display: flex; justify-content: center; gap: 20px;">
+    <img src="https://thefreethinkingschool.com/images/l2l.png" alt="learn" style="width: 150px;">
+    <img src="https://thefreethinkingschool.com/images/luv_2_teach.png" alt="teach" style="width: 150px;">
+    <img src="https://thefreethinkingschool.com/images/luv_2_partner.png" alt="partner" style="width: 150px;">
+  </div>
+  <p
+    style="color:orangered;font-family: 'Times New Roman', Times, serif;font-size: 40px;text-align: center;">Admission
+    is open all year round as and when a child turns 1.5 years</p>
+  <br><br><br>
+  <h1 style="color: palevioletred; font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center;">FAQ</h1><br>
+  <br><br>
+    <p style="font-size: 25px;text-align: center;">At The Freethinking School, we encourage your curiosity to
+      understand our methodology better. Please do feel free to call or write to us about any query you may have
+      regarding your child's formative education.</p>
+    <div class="faq-item">
+      <div class="faq-question">Who can join the After School programs at TFS?
+      </div>
+      <div class="faq-answer">
+        Children between the age group of 2.5 to 16 years are eligible to join this program.
+        The TED-ED Club is open to children 8 to 18 years.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What are the timings?</div>
+      <div class="faq-answer">The After School Care program starts at 12.30pm and ends at 5.30pm. The After School
+        Club programs will end latest by 7.00pm.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What are the different programs?</div>
+      <div class="faq-answer">Our programs are broadly divided into After School Care, After School Club and the TED-Ed
+        Club. The After School Care program is a gift for the child and a boon to working parents. While the After
+        School Club will offer a mix of structured and unstructured individual activities from which children can choose
+        from. TED-Ed Club is a part of TED’s effort to celebrate youth ideas in the form of TED style talks.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What are the individual activities on offer?</div>
+      <div class="faq-answer">We plan to offer theatre, music, baking, languages etc. Please check the calendar for the
+        current list of activities on offer.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you introduce new activities?</div>
+      <div class="faq-answer">Yes, we keep offering new activities based on demand or the needs of the child. Log on to
+        our FB page to know more.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is your student /teacher ratio?</div>
+      <div class="faq-answer">Varies from activity to activity.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Does the fees include snacks and lunch?</div>
+      <div class="faq-answer">No. These come at an extra cost. Kindly fill in the request form by clicking the snack
+        icon on this page.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you have transport?</div>
+      <div class="faq-answer">Yes, kindly fill in the request form by clicking the transport icon on this page.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What are the safety measures implemented at the school?</div>
+      <div class="faq-answer">We have 24 hour security guards, CCTV cameras, full time attenders and our
+        ever-attentive teachers.
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <script>
+    document.querySelectorAll(".faq-question").forEach((question) => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector("span");
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          icon.textContent = "+";
+        } else {
+          document.querySelectorAll(".faq-answer").forEach((item) => {
+            item.style.display = "none";
+          });
+          document.querySelectorAll(".faq-question span").forEach((icon) => {
+            icon.textContent = "+";
+          });
+          answer.style.display = "block";
+          icon.textContent = "-";
+        }
+      });
+    });
+  </script>
+  <section class="initiatives">
+    <h2 style="color: #E91E63;">Our Initiative</h2>
+    <div class="initiatives-container">
+      <div class="initiative animate" style="--delay: 0.2s;">
+        <img src="https://www.thefreethinkingschool.com/images/free_smile.png" alt="Free Smiles">
+        <p>Free Smiles is a freethinking family initiative to share some happiness with others in our
+          community.<br><span>share happiness!</span></p>
+      </div>
+      <div class="initiative animate" style="--delay: 0.4s;">
+        <img src="https://www.thefreethinkingschool.com/images/mont_net.png" alt="Montessori for Masses">
+        <p>Montessori for Masses is a forum for Montessories and Montessories to come together to share their ideas and
+          experiences.<br><span>FOR MASSES</span></p>
+      </div>
+      <div class="initiative animate" style="--delay: 0.6s;">
+        <img src="https://www.thefreethinkingschool.com/images/alumni_meet.png" alt="The Freethinking Family">
+        <p>the freethinking family is a forum for our past and present families to come together to share their
+          experiences.<br><span>alumni meet</span></p>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const initiatives = document.querySelectorAll(".initiative");
+
+      function revealInitiatives() {
+        initiatives.forEach((initiative) => {
+          const rect = initiative.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            initiative.classList.add("show");
+          }
+        });
+      }
+      window.addEventListener("scroll", revealInitiatives);
+      revealInitiatives();
+    });
+  </script>
+  <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+    <p>© www.thefreethinkingschool.com 2017</p>
+  </footer>
+  
+  
+ 
+</body>
+
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            height: 100px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 40px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            
+            padding: 10px 8px;
+            border-radius: 70%;
+            background-color: lightcoral;
+            
+        }
+
+        .about-container {
+            margin-top: 120px;
+
+            width: 80%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: lightgoldenrodyellow;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .admission-banner {
+            text-align: center;
+
+            color: purple;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .quote-section {
+            background-color: #4bb7a9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quote-container {
+            display: flex;
+            align-items: center;
+            max-width: 1500px;
+            text-align: left;
+        }
+
+        .quote-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .quote-text {
+            font-size: 26px;
+            color: white;
+            font-weight: 300;
+            font-family: cursive;
+        }
+
+        .quote-mark {
+            color: #ffcc00;
+            font-size: 30px;
+        }
+
+        .quote-author {
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Arial", sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: green;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+
+        }
+
+        img {
+            margin-right: 20px;
+
+        }
+
+        h3 {
+            margin-top: 10px;
+            text-align: start;
+        }
+
+        p {
+            margin-top: 0;
+
+        }
+
+        .text-container {
+            border: 2px solid #ccc;
+            padding: 30px;
+            display: inline-block;
+            background-color: lightblue;
+            text-align: end;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            transition: all 0.3s ease;
+            max-width: 350px;
+
+            margin: 20px auto;
+
+        }
+
+        .text-container:hover {
+            transform: scale(1.05);
+
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .learning-cycle {
+            width: 400px;
+
+            height: auto;
+            margin-bottom: 20px;
+
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .text-container h4 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.5;
+
+            text-align: center;
+        }
+
+        .text-blue {
+            color: skyblue;
+        }
+
+        .text-orange {
+            color: orangered;
+        }
+
+        .text-purple {
+            color: purple;
+        }
+
+        @media (max-width: 768px) {
+            .text-container {
+                max-width: 100%;
+
+                padding: 20px;
+            }
+
+            .learning-cycle {
+                width: 200px;
+
+            }
+
+            .text-container h4 {
+                font-size: 20px;
+
+            }
+        }
+
+        img:hover {
+            transform: scale(1.1);
+
+            opacity: 0.8;
+
+        }
+
+        h4 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: medium;
+            font-style: normal;
+            font-size: larger;
+            background-color: white;
+        }
+
+        .text-container {
+            display: flex;
+            align-items: center;
+            max-width: 1500px;
+            text-align: end;
+        }
+
+        .faq-container {
+            width: 60%;
+
+            margin: 30px auto;
+            max-width: 500px;
+
+            font-family: 'Arial', sans-serif;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            background-color: lightcoral;
+            color: white;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: li;
+        }
+
+        .faq-answer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            display: none;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .faq-question span {
+            float: right;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-section {
+            background-color: lavender;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 50px 0;
+        }
+
+        .testimonial-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-title span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .testimonial-title .blue {
+            color: #2196F3;
+        }
+
+        .testimonial-title .green {
+            color: #4CAF50;
+        }
+
+        .testimonial-title .orange {
+            color: #FF9800;
+        }
+
+        .testimonial-title .pink {
+            color: #E91E63;
+        }
+
+        .testimonial-quote {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #555;
+            margin: 0;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-container button {
+            background-color: transparent;
+            border: none;
+            font-size: 1em;
+            color: #2196F3;
+            cursor: pointer;
+        }
+
+        .testimonial-container button:hover {
+            color: #E91E63;
+        }
+
+        .testimonial-arrow {
+            font-size: 2em;
+            color: #2196F3;
+            cursor: pointer;
+        }
+
+        .testimonial-arrow:hover {
+            color: #E91E63;
+        }
+
+        .testimonial-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+
+            color: white;
+
+            margin: 5px 0;
+
+            padding: 0;
+
+            text-align: center;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+
+            align-items: center;
+
+            justify-content: space-between;
+            gap: 40px;
+            opacity: 0;
+
+            transform: translateX(100%);
+
+            visibility: hidden;
+            transition: all 1s ease-out;
+
+            
+        }
+
+        .container.reverse {
+            flex-direction: row-reverse;
+
+        }
+
+        .container img {
+            max-width: 300px;
+
+            height: auto;
+            flex-shrink: 0;
+
+        }
+
+        .info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .container.animate {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="https://www.thefreethinkingschool.com/images/logo.png" alt="School Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p>
+            The goal of the freethinking school's preschool program (1.5 – 6 years) is to unbox a child's talents and
+            creativity. We follow the Montessori method of education that develops the child's five senses through
+            manipulative materials in the classroom, providing for hands-on education. These materials are arranged in a
+            progression of graduating difficulty, allowing the child to progress at his own pace.
+        </p>
+        <p>
+            Dr. Maria Montessori described ages 3 to 6 as the second phase of the 'sensitive period'. This is a time of
+            enormous developmental leaps, when children are ready to expand their vocabulary, grasp math concepts, and
+            develop habits for working with others.
+        </p>
+        <p>
+            This program is split into 3 levels. After completing level 3, the children are eligible to enter Class 1.
+        </p>
+    </div><br><br><br><br><br>
+    <section class="quote-section">
+        <div class="quote-container">
+            <img src="https://thefreethinkingschool.com/images/maria_montessori.png" alt="Dr. Maria Montessori"
+                class="quote-image">
+            <p class="quote-text">
+                <span class="quote-mark">❝</span> The education of even a small child, therefore,
+                does not aim at preparing him for school, but for life. <span class="quote-mark">❞</span>
+            </p>
+            <p class="quote-author">— Dr. Maria Montessori</p>
+        </div>
+    </section> <br><br><br><br><br>
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <h1 style="color:#E91E63;">Our Difference</h1>
+    <p style="background-color: white;text-align: center;padding-inline: 400px;">
+        Where do we learn the lessons that we need for life? Is it in the classroom? Or by observing firsthand through
+        field trips, talks by lifelong experts in a field, a customised curriculum that draws from all fields for a
+        balanced viewpoint, or even themes that link together supposedly random topics to draw out underlying links and
+        connections.
+        <span class="highlight">"Experience"</span> is the master teacher that spontaneously ignites a love for learning
+        by doing, observing and experimenting. It is the <span class="highlight">TFS experience</span> that keeps our
+        little freethinkers actively engaged and enthralled in discovery.
+    </p><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container">
+        <img src="https://www.thefreethinkingschool.com/images/pre_1.png" alt="curriculum" class="image-left">
+        <div class="info">
+            <h3 style="color: #E91E63;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">
+                Freethinking Curriculum</h3>
+            <p>With attractive Montessori materials, kids are free to explore, question and reason for themselves. We’ve
+                put together a customized curriculum of various teaching methods to give our kids a holistic learning
+                experience.</p>
+        </div>
+    </div><br><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container reverse">
+        <img src="https://www.thefreethinkingschool.com/images/pre_2.png" alt="extendedday" class="image-right">
+        <div class="info">
+            <h3 style="color: teal;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">Extended Day
+            </h3>
+            <p>For children upwards of 3.5 years, we have divided the day into two halves. While the morning half is
+                focused on core subjects, the second half is time for them to explore their creativity.</p>
+        </div>
+    </div><br><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container">
+        <img src="https://www.thefreethinkingschool.com/images/pre_3.png" alt="expertcommunityteachers"
+            class="image-left">
+        <div class="info">
+            <h3 style="color: orangered;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">
+                Expert Community Teachers</h3>
+            <p>We draw on life experts who work alongside classroom teachers to integrate art, music, dance and physical
+                education through the day to further enhance the child’s experience.</p>
+        </div>
+    </div><br><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container reverse">
+        <img src="https://www.thefreethinkingschool.com/images/pre_4.png" alt="curatedexperiences" class="image-right">
+        <div class="info">
+            <h3 style="color: blue;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">
+                Curated Experiences</h3>
+            <p>Field trips to familiar places such as the local grocery stores, parks, libraries, restaurants etc.,
+                build on children’s interests especially since it is a natural extension to classroom learning; intended
+                to expand their knowledge to the next level, where it is applied.</p>
+        </div>
+    </div><br><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container">
+        <img src="https://www.thefreethinkingschool.com/images/pre_5.png" alt="freethinkingclassspaces"
+            class="image-left">
+        <div class="info">
+            <h3 style="color: green;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">
+                Freethinking Class Spaces</h3>
+            <p>The freethinking space is an authentic and charming to cater to the early childhood program. Within the
+                specially prepared indoor and outdoor environments, children freely engage in constructive activities
+                for practical life, sensorial development, language, math, music, dance and movement. It is a
+                preparation of life, which will benefit the child for years to come. Appropriate technological
+                experiences are utilized as a catalyst in the classroom for improved physical, cognitive and social
+                development.</p>
+        </div>
+    </div><br><br><br><br>
+    <hr style="border: 1px solid black; width: 70%; margin: 20px auto;">
+    <div class="container reverse">
+        <img src="https://www.thefreethinkingschool.com/images/pre_6.png" alt="thematicunitbased experiences"
+            class="image-right">
+        <div class="info">
+            <h3 style="color: lightseagreen;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 25px;">
+                The Matic Unit Based Experiences</h3>
+            <p>Through our inquiry generating themes children explore and understand a vast body of knowledge, making
+                connections to their prior knowledge, gaining perspectives and offering opportunity for creative
+                thought. These themes transcend boundaries of discipline; which link various subject strands that the
+                topic touches upon, thereby broadening and strengthening their long-term understanding of the key idea.
+            </p>
+        </div>
+    </div><br><br><br>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const containers = document.querySelectorAll(".container");
+
+            function checkScroll() {
+                containers.forEach(container => {
+                    const rect = container.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.8) {
+                        container.classList.add("animate");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
+    <br><br><br><br>
+    <div class="text-container">
+        <img src="https://www.thefreethinkingschool.com/images/learning_wheel.png" alt="learningcycle"
+            class="learning-cycle">
+        <h4>
+            <span class="text-blue">TFS</span>
+            <span class="text-orange">Experiential</span>
+            <span class="text-blue">Learningwheel</span>
+            <span class="text-purple">Wheel</span>
+        </h4>
+    </div><br><br><br><br>
+    <h1 style="color: palevioletred; font-family: Verdana, Geneva, Tahoma, sans-serif;">FAQ</h1><br>
+    <br<br>
+        <p style="font-size: 25px;text-align: center;">At The Freethinking School, we encourage your curiosity to
+            understand our methodology better. Please do feel free to call or write to us about any query you may have
+            regarding your child's formative education.</p>
+        <div class="faq-item">
+            <div class="faq-question">How old should my child be before I obtain admission in the Freethinking School?
+            </div>
+            <div class="faq-answer">
+                The minimum age for admission is typically 3 years, but it depends on the specific program. Please
+                contact us for more details.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What are the school timings?</div>
+            <div class="faq-answer">
+                The school runs from 8:30 AM to 3:30 PM, Monday to Friday.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Tell me more about the Freethinking curriculum?</div>
+            <div class="faq-answer">
+                Our curriculum is focused on critical thinking, creativity, and experiential learning. We combine
+                traditional education with innovative methods.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What are the extracurricular activities?</div>
+            <div class="faq-answer">
+                We offer a wide range of extracurricular activities including sports, arts, music, drama, and more to
+                ensure holistic development.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is there a daycare facility after school?</div>
+            <div class="faq-answer">
+                Yes, we provide a daycare facility for students after school hours.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How is TFS different from other schools?</div>
+            <div class="faq-answer">
+                TFS focuses on personalized learning, critical thinking, and experiential education, allowing students
+                to actively engage in their learning.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What are the facilities available at TFS?</div>
+            <div class="faq-answer">
+                TFS provides state-of-the-art classrooms, sports facilities, libraries, art studios, and computer labs
+                to enhance student learning.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is your student/teacher ratio?</div>
+            <div class="faq-answer">
+                We maintain a low student-to-teacher ratio to ensure personalized attention to each student. The ratio
+                is typically 12:1.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Does the fees include snacks and lunch?</div>
+            <div class="faq-answer">
+                Yes, the fees cover snacks and lunch provided to all students.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you have transport?</div>
+            <div class="faq-answer">
+                Yes, we provide a school bus service for students who need transportation.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What are the safety measures implemented at the school?</div>
+            <div class="faq-answer">
+                We implement a range of safety measures including security personnel, CCTV cameras, first-aid
+                facilities, and safety drills.
+            </div>
+        </div>
+        </div>
+        </div>
+
+        </section>
+        <script>
+            document.querySelectorAll(".faq-question").forEach((question) => {
+                question.addEventListener("click", () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector("span");
+
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                        icon.textContent = "+";
+                    } else {
+                        document.querySelectorAll(".faq-answer").forEach((item) => {
+                            item.style.display = "none";
+                        });
+
+                        document.querySelectorAll(".faq-question span").forEach((icon) => {
+                            icon.textContent = "+";
+                        });
+
+                        answer.style.display = "block";
+                        icon.textContent = "-";
+                    }
+                });
+            });
+        </script>
+        <h1 style="color: brown; font-size: 50px;">Connect</h1>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <img src="https://thefreethinkingschool.com/images/l2l.png" alt="learn" style="width: 150px;">
+            <img src="https://thefreethinkingschool.com/images/luv_2_teach.png" alt="teach" style="width: 150px;">
+            <img src="https://thefreethinkingschool.com/images/luv_2_partner.png" alt="partner" style="width: 150px;">
+        </div>
+        <p style="color:orangered;font-family: 'Times New Roman', Times, serif;font-size: 40px;text-align: center;">
+            Admission is open all year round as and when a child turns 1.5 years</p><br><br><br><br>
+        <hr style="border: 1px solid black; width: 90%; margin: 20px auto;">
+        <h1 style="text-align: center;">
+            <span style="color:teal;">Free</span>
+            <span style="color:teal">Skills</span>
+        </h1>
+        <p style="text-align: center;font-size: 35px;">
+            <span style="color:#E91E63 ;">Lifeskills</span>
+            <span style="color: #E91E63;">Workshops</span>
+            <span style="color: #E91E63;">&</span>
+            <span style="color: #E91E63;">Events</span>
+        </p><br><br><br>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+
+            <img src="https://thefreethinkingschool.com/images/sat1.jpg" alt="aftschool"
+                style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover;  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); margin-top: -20px;">
+
+
+            <div style="border-left: 2px solid #2980b9; height: 450px; margin: 0 20px;"></div>
+
+
+            <div style="max-width: 50%; font-size: 20px; line-height: 1.6;">
+                <p style="text-align:left;">
+                    The FreeSkills program will provide well-crafted life skill workshops and events for children of
+                    different age groups. These workshops will touch upon topics such as leadership, entrepreneurship,
+                    finance, technology, etiquette, recycling, gardening, language, culture, DIY classes etc., besides
+                    events and competitions.
+                </p>
+
+                <ul style="list-style-type: disc; margin-left: 20px; text-align: left;font-size: 20px;">
+                    <li>Timing: 12.30 to 6.00pm</li>
+                    <li>Timing and details: please check calendar</li>
+                    <li>A certificate of completion will be given for this program</li>
+                    </li>
+                </ul>
+            </div>
+        </div><br><br><br>
+
+        <h1 style="text-align: center;">
+            <span style="color: teal;">Free</span>
+            <span style="color:teal; ">Mentor</span>
+        </h1>
+        <p style="text-align: center;font-size: 35px;">
+            <span style="color:#E91E63 ;">Career</span>
+            <span style="color: #E91E63 ;">Preparatory</span>
+            <span style="color: #E91E63;">Experiences</span>
+
+        </p><br><br><br>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+
+            <img src="https://thefreethinkingschool.com/images/sat2.jpg" alt="aftschool"
+                style="width: 350px; height: 350px; border-radius: 50%; object-fit: cover;  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); margin-top: -20px;">
+
+
+            <div style="border-left: 2px solid #2980b9; height: 450px; margin: 0 20px;"></div>
+
+
+            <div style="max-width: 50%; font-size: 20px; line-height: 1.6;">
+                <p style="text-align:left;">
+                    The aim of the FreeMentor program is to offer career preparatory experiences to children. Keeping
+                    the various and often confusing career options available in today’s world, this program aims to
+                    demystify them to children, so they can make informed choices while choosing subjects at the high
+                    school level. Children get a macro level understanding of how a particular industry or business
+                    works. Part time internships will also be offered during holidays.
+                </p>
+
+                <ul style="list-style-type: disc; margin-left: 20px; text-align: left;font-size: 20px;">
+                    <li>Open to age group: 12 - 16 years</li>
+                    <li>Timing and details: please check calendar</li>
+                    <li>A certificate of completion will be given for this program</li>
+                    </li>
+                </ul>
+            </div>
+        </div><br><br><br>
+        <section class="testimonial-section">
+            <div class="testimonial-title">
+                <span class="blue">What</span>
+                <span class="green">Parents</span>
+                <span class="pink">Say</span>
+            </div>
+            <div class="testimonial-content">
+                <span class="testimonial-arrow">&#8592;</span>
+                <div class="testimonial-quote" id="testimonial">
+                    “The Freethinking School has been a very good foundation for both my kids. They have learnt a lot of
+                    useful things, which will remain with them all their life”.
+                </div>
+                <span class="testimonial-arrow">&#8594;</span>
+            </div>
+        </section>
+        <script>
+            let currentReviewIndex = 0;
+            const reviews = [
+                "“The Freethinking School has been a very good foundation for both my kids. They have learnt a lot of useful things, which will remain with them all their life”.",
+                "“It’s amazing to see how my child is progressing in school. It’s good that he loves and enjoys the school environment and he is trying to be the same at home”.",
+                "“I feel The Freethinking School is taking all the right steps. Feel satisfied and confident that the kids needs will be taken care of well. All the best!”",
+                "“Very good preschool. Trustworthy staff. Lots of activities. Kids seem really happy here”."
+
+            ];
+
+            function changeReview(direction) {
+                if (direction === 'next') {
+                    currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+                } else if (direction === 'prev') {
+                    currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+                }
+
+
+                document.getElementById('testimonial').textContent = reviews[currentReviewIndex];
+            }
+
+
+            document.querySelectorAll('.testimonial-arrow').forEach(arrow => {
+                arrow.addEventListener('click', function () {
+                    if (this.textContent === '→') {
+                        changeReview('next');
+                    } else if (this.textContent === '←') {
+                        changeReview('prev');
+                    }
+                });
+            });
+        </script>
+
+        <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+            <p>© www.thefreethinkingschool.com 2017</p>
+
+            
+        </footer>
+
+
+
+</body>
+
+</html>
+</body>
+
+</html>
